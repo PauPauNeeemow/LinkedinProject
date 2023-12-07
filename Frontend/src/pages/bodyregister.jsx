@@ -27,19 +27,20 @@ export default function BodyRegister() {
                 method: "POST",
                 body: JSON.stringify(data)
             })
+            const res = await response.json()
+            if (!res["token"]){
+                alert('connexion échouer!')
+            }
+            else{
+                localStorage.setItem("token", res["token"]);
+                localStorage.setItem("verif", res["verif"]);
+                localStorage.setItem('id', res["id"] )
+                localStorage.setItem("adm", res["adm"])
+                window.location.href ="/compte";
+                
+            }
         })
-        const res = await response.json()
-        if (!res["token"]){
-            alert('connexion échouer!')
-        }
-        else{
-            localStorage.setItem("token", res["token"]);
-            localStorage.setItem("verif", res["verif"]);
-            localStorage.setItem('id', res["id"] )
-            localStorage.setItem("adm", res["adm"])
-            window.location.href ="/compte";
-            
-        }
+        
     }
 
     return (
