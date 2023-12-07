@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^api/user$ home.php [L]
+RewriteRule ^api/advertissements$ home.php [L]
+RewriteRule ^api/login$ home.php [L]
+RewriteRule ^api/compagnies$ home.php [L]
+RewriteRule ^api/advertissements/(\d+)$ home.php [L]
+RewriteRule ^api/information$ home.php [L]
+RewriteRule ^api/login/verif$ home.php [L]
+RewriteRule ^api/user/(\d+)$ home.php [L]
+RewriteRule ^api/advertissements/(\w+)$ home.php [L]
+RewriteRule ^api/advertissements/comp/(\w+)$ home.php [L]
+RewriteRule ^api/information/(\d+)$ home.php [L]
+RewriteRule ^api/mail$ home.php [L]
+
+
